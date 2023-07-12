@@ -57,7 +57,8 @@ public class MainApplication extends Application {
             }
 
             if (aesKeyGenerator != null) {
-                aesKeyGenerator.init(512, new SecureRandom());
+                // FIX java.security.InvalidParameterException: Key size must be either 128, 192, or 256 bits
+                aesKeyGenerator.init(256, new SecureRandom());
 
                 SecretKey secretKey = aesKeyGenerator.generateKey();
 

@@ -34,37 +34,8 @@ public class KeyUtil {
      */
 
     public static byte[] getEncryptionKey(@NonNull Context context) {
-        // Returning result
-        byte[] result = null;
-        // - Returning result
-
-        SharedPreferences sharedPreferences = null;
-        try {
-            sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE);
-        } catch (Exception e) {
-            LogUtil.e(TAG, e.getMessage());
-            LogUtil.e(TAG, e.toString());
-
-            e.printStackTrace();
-        }
-
-        if (sharedPreferences != null) {
-            String encryptionKeyHexadecimal = null;
-            try {
-                encryptionKeyHexadecimal = sharedPreferences.getString("Key", "Key");
-            } catch (Exception e) {
-                LogUtil.e(TAG, e.getMessage());
-                LogUtil.e(TAG, e.toString());
-
-                e.printStackTrace();
-            }
-
-            if (encryptionKeyHexadecimal != null && !encryptionKeyHexadecimal.equals("Key")) {
-                result = HexUtil.hexadecimalToBytes(encryptionKeyHexadecimal);
-            }
-        }
-
-        return result;
+        // Problem with EncryptionK, temp ignore.
+       return null;
     }
 
     public static boolean putEncryptionKey(@NonNull Context context, @NonNull byte[] encryptionKey) {
